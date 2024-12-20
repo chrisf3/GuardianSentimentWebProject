@@ -1,0 +1,11 @@
+#requirements.txt
+#This is a list of the necessary packages to run the code.
+#IMPORTANT NOTE: For some reason when running pip instal -r requirements.txt the packages cannot download properly. For that reason, please download each package separately
+
+Flask==2.3.2
+gunicorn==21.2.0
+requests==2.31.0
+pandas==1.5.3
+matplotlib==3.7.1
+textblob==0.17.1
+pytrends==4.8.0

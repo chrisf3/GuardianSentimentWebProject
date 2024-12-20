@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Input - Sentiment Analysis App</title>
+    <style>
+        /* Global styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Title styles */
+        .title {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        /* Description box styles */
+        .description-box {
+            text-align: center;
+            max-width: 600px;
+            font-size: 16px;
+            color: #555555;
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid #007bff;
+        }
+
+        /* Form container styles */
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Styles for the heading inside the form container */
+        h1 {
+            color: #333333;
+        }
+
+        /* Label styles */
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+
+        /* Helper text styles */
+        small {
+            display: block;
+            margin-bottom: 10px;
+            color: #888888;
+            font-size: 12px;
+        }
+
+        /* Input box and drop-down menu styles */
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            font-size: 14px;
+        }
+
+        /* Button styles */
+        button {
+            width: 100%;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Loading message styles */
+        .loading-message {
+            display: none; /* Initially hidden */
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555555;
+        }
+    </style>
+    <script>
+        /**
+         * Function to show a loading message when the form is submitted
+         */
+        function showLoadingMessage() {
+            document.getElementById('loadingMessage').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <!-- Application Title -->
+    <div class="title">The Guardian Sentiment Analysis Application</div>
+
+    <!-- Application Description -->
+    <div class="description-box">
+        This application performs sentiment analysis on articles from "The Guardian" based on a keyword and year input.
+        Enter the topic and year to visualize insights like sentiment polarity, subjectivity trends, and Google Trends data.
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <h1>Enter Data</h1>
+
+        <!-- Data Input Form -->
+        <form action="/process" method="POST" onsubmit="showLoadingMessage()">
+            <!-- Keyword Input -->
+            <label for="keyword">Keyword:</label>
+            <small>Provide a keyword for the analysis, e.g., "climate change."</small>
+            <input type="text" id="keyword" name="keyword" placeholder="Enter a keyword..." required>
+
+            <!-- Year Selection -->
+            <label for="year">Year:</label>
+            <small>Select the year for which data should be analyzed.</small>
+            <select id="year" name="year" required>
+                <!-- Dynamically generate year options -->
+                <script>
+                    for (let year = 2000; year <= 2024; year++) {
+                        document.write(`<option value="${year}">${year}</option>`);
+                    }
+                </script>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Loading Message -->
+        <div id="loadingMessage" class="loading-message">
+            Your request has been submitted. Please wait a few seconds while the application fetches the data...
+        </div>
+    </div>
+</body>
+</html>

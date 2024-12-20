@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualization Results</title>
+    <style>
+        /* General styling for the body and layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            position: relative; /* Required for button positioning */
+        }
+
+        /* Main heading styling */
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* "New Analysis" button to navigate back to the index page */
+        .new-analysis-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .new-analysis-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Container for each chart and its description */
+        .image-container {
+            margin: 20px auto;
+            max-width: 80%;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left; /* Align content within the container */
+        }
+
+        /* Description box for explaining each chart */
+        .description-box {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button for starting a new analysis -->
+    <a href="/" class="new-analysis-button">New Analysis</a>
+
+    <!-- Dynamic title for the analysis results -->
+    <h1>Analysis Results for "{{ keyword }}" in {{ year }}</h1>
+
+    <!-- Chart 1: Polarity Over Time -->
+    <div class="image-container">
+        <div class="description-box">
+            <p>This chart shows how sentiment polarity has evolved over time, providing insights into trends in positive and negative sentiments. Sentiment is measured on a scale from -1 (Negative), to 1 (Positive). </p>
+        </div>
+        <img src="/static/images/polarity_over_time.png" alt="Polarity Over Time">
+    </div>
+
+    <!-- Chart 2: Subjectivity Over Time -->
+    <div class="image-container">
+        <div class="description-box">
+            <p>This chart illustrates how subjective the articles have been over the analyzed time period. Subjectivity is measured on a scale from 0 (Objective), to 1 (subjective).</p>
+        </div>
+        <img src="/static/images/subjectivity_over_time.png" alt="Subjectivity Over Time">
+    </div>
+
+    <!-- Chart 3: Polarity Distribution -->
+    <div class="image-container">
+        <div class="description-box">
+            <p>The distribution of sentiment polarity across the dataset shows the balance of positive and negative sentiments. Sentiment is measured on a scale from -1 (Negative), to 1 (Positive). </p>
+        </div>
+        <img src="/static/images/polarity_distribution.png" alt="Polarity Distribution">
+    </div>
+
+    <!-- Chart 4: Subjectivity Distribution -->
+    <div class="image-container">
+        <div class="description-box">
+            <p>This chart highlights how subjective or objective the analyzed articles are. Subjectivity is measured on a scale from 0 (Objective), to 1 (subjective).</p>
+        </div>
+        <img src="/static/images/subjectivity_distribution.png" alt="Subjectivity Distribution">
+    </div>
+
+    <!-- Chart 5: Polarity vs Subjectivity -->
+    <div class="image-container">
+        <div class="description-box">
+            <p>This scatter plot explores the relationship between polarity and subjectivity, revealing correlations in the data.</p>
+        </div>
+        <img src="/static/images/polarity_vs_subjectivity.png" alt="Polarity vs Subjectivity">
+    </div>
+</body>
+</html>
