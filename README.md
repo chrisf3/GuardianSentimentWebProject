@@ -77,7 +77,7 @@ This application can be easily deployed to Render for hosting. Follow these step
    - Go to the Render dashboard and create a new Web Service.
    - Connect it to your GitHub repository containing this project.
 2. Set the Build and Start Commands:
-   - **Build Command: pip install -r requirements.txt**
+   - **Build Command: pip install Flask gunicorn requests pandas matplotlib textblob**
    - **Start Command: gunicorn app:app**
 3. Environment Variables:
    - Set GUARDIAN_API_KEY as an environment variable or edit config.py directly and redeploy.
