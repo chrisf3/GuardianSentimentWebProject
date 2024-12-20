@@ -31,19 +31,19 @@ In case there are issues with the render, the project can also be run locally. F
 
 ## Project Structure
 
-project/
-   app.py                      # Flask application serving the web interface
-   main.py                     # Main logic for fetching, analyzing, and visualizing articles
-   data_processing.py          # Functions for processing and saving articles to CSV
-   sentiment_analysis.py       # Functions for analyzing sentiment of articles
-   visualization.py            # Functions for generating various plots
-   guardian_api.py             # Functions for interacting with the Guardian API
-   config.py                   # Configuration file with API keys and base URLs
-   templates/
-       index.html              # Landing page with input form for keyword/year
-       results.html            # Results page displaying the generated charts
-   static/
-       images/                 # Directory where generated plots and CSV files are saved
+project
+- app.py                      - Flask application serving the web interface
+- main.py                     - Main logic for fetching, analyzing, and visualizing articles
+- data_processing.py          - Functions for processing and saving articles to CSV
+- sentiment_analysis.py       - Functions for analyzing sentiment of articles
+- visualization.py            - Functions for generating various plots
+- guardian_api.py             - Functions for interacting with the Guardian API
+- config.py                   - Configuration file with API keys and base URLs
+- templates/
+   - index.html               - Landing page with input form for keyword/year
+   - results.html             - Results page displaying the generated charts
+- static/
+       images/                - Directory where generated plots and CSV files are saved
 
 
 ## Requirements
@@ -80,7 +80,7 @@ To run locally, please follow the following steps. The
 
 1. Clone the repository
 2. Optional: Create and activate a virtual environment:
-3. Install dependencies: "**Build Command**: pip install Flask gunicorn requests pandas matplotlib textblob"
+3. Install dependencies:
 4. Run app.py
 5. Access the Web Interface - Open your browser and go to http://127.0.0.1:5000.
 6. Run an Analysis:
